@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>商品详情</title>
+    <link rel="stylesheet" type="text/css" href="css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="css/aui-slide.css" />
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="css/proDetail.css" />
+    <style>
+    	body{
+    		padding-top:2.25rem;
+    		padding-bottom:2.5rem;
+    		background-color: #e5e5e5;
+    	}
+    	/*顶部导航栏*/
+        header {
+            /*margin-top: 0.75rem;*/
+            /*position:relative;*/
+        }
+		.aui-bar-light,
+		.aui-bar-nav.aui-bar-light .aui-iconfont
+		{
+			color:gray!important;
+		}
+		.aui-iconfont:before {
+		    font-size: .9rem!important;
+		    color: gray;
+		}
+		.aui-bar.aui-bar-light{
+			background-color: #f9f9f9;
+			position: fixed;
+			z-index:10000;
+		}
+    	.aui-bar-nav .aui-title {
+    		font-size: .8rem!important;
+		}
+		/*弹出来的小方块*/
+		.header-box{
+			position:absolute;
+			top:2.7rem;
+			right:0.25rem;
+			width: 7rem;
+			background-color: #414648;	
+			display: none;
+		}
+		.header-box p{
+			width:0.75rem;
+			height:0.75rem;
+			position:absolute;
+			background-color:#414648;
+			top: -0.3rem;
+			right:0.2rem;
+			transform: rotate(45deg);
+		}
+		.header-box a{
+			display: block;
+			line-height: 0.8rem;
+			text-align: left;
+			padding-left: 0.5rem;
+			font-size: 1rem;
+			color:#d5d5d5;
+		}
+		.header-box i{
+			font-style: normal;
+			margin-left: 0.5rem;
+		}
+		.header-box .aui-iconfont:before {
+		    font-size: .9rem!important;
+		    color: #d5d5d5!important;
+		    color: gray;
+		}
+		/*轮播图*/
+		.aui-slide3{
+			background-color: #fff;
+		}
+		.aui-slide-node img {
+		    width: auto!important;
+		    height: 100%;
+		    margin: 0 auto;
+		}
+		/*点击大图放大css代码*/
+		.topleft,.topright,.bottomleft,.bottomright{
+		  width:50%;
+		  height:50%;
+		  position:absolute;
+		}
+		.topleft{
+		  /*background-color:red;*/
+		  top:0;
+		  left:0;
+		}
+		.topright{
+		  /*background-color:green;*/
+		  top:0;
+		  right:0;
+		}
+		.bottomleft{
+		  /*background-color:blue;*/
+		  bottom:0;
+		  left:0;
+		}
+		.bottomright{
+		  /*background-color:yellow;*/
+		  bottom:0;
+		  right:0;
+		}
+		/*网页底部*/
+	
+	
+		/*底部工具栏*/
+		.aui-bar-tab .aui-bar-tab-label a{
+			display: block;
+		    font-size: 0.6rem;
+		    position: relative;
+		    color:#757575;
+		}	
+		.aui-bar-tab {
+		    background-color: #f9f9f9;
+		  }
+
+    </style>
+</head>
+<body>
+<div class="proDetail">
+	<!--顶部导航栏-->
+    <header class="aui-bar aui-bar-nav aui-bar-light header">
+    <!-- javascript:history.back(-1) -->
+        <a class="aui-pull-left aui-btn" href="index.html">
+            <span class="aui-iconfont aui-icon-left"></span>
+        </a>
+        <div class="aui-title">商品详情</div>
+        <a class="aui-pull-right aui-btn">
+            <span class="aui-iconfont aui-icon-more"></span>
+        </a>
+        <div class="header-box">
+        	<p></p>
+            <a href="cate-search.html">
+            	<span class="aui-iconfont aui-icon-search"></span>
+            	<i>搜索</i>
+            </a>
+            <a href="cate-search.html" style="border-top: 1px solid #666">
+            	<span class="aui-iconfont aui-icon-home"></span>
+            	<i>首页</i>
+            </a>
+            <a href="cate-search.html" style="border-top: 1px solid #666">
+            	<span class="aui-iconfont aui-icon-share"></span>
+            	<i>足迹</i>
+            </a> 
+        </div>
+    </header>
+    <!--轮播图-->
+    <div id="aui-slide3">
+        <div class="aui-slide-wrap" >
+            <div class="aui-slide-node bg-dark">
+                <img src="./image/pro-ad01.jpg" onClick="$(this).ImgZoomIn();" />
+            </div>
+            <div class="aui-slide-node bg-dark">
+                <img src="./image/pro-ad03.jpg" onClick="$(this).ImgZoomIn();" />
+            </div>
+            <div class="aui-slide-node bg-dark">
+                <img src="./image/pro-ad02.jpg" onClick="$(this).ImgZoomIn();" />
+            </div>
+        </div>
+        <div class="aui-slide-page-wrap"><!--分页容器--></div>
+    </div>
+	<!-- 商品基本信息 -->
+	<section>
+		<div class="pro-title">
+			<h3 class="self">湘橙 8粒装</h3>
+			<p class="pro-title-desc">果肉细嫩饱满,色泽鲜亮,汁水丰富,美味健康</p>
+			<div class="pro-title-price">
+				<h4><em>¥ </em>45</h4>
+				<span><a href="#">优惠提醒</a></span>
+				<p>建议零售价 <del>¥25</del></p>
+			</div>
+			<p class="pro-title-sel">
+				<span>共售出<b>108</b>件</span>
+				<span>库存1000件</span>
+			</p>	
+		</div>
+		<div class="pro-sel">
+			<div class="pro-sel-top">
+				<h4>领券</h4>
+				<span><a href="#">满200减20</a></span>
+				<span><a href="#">满300减30</a></span>
+				<a class="aui-pull-right aui-btn">
+		            <span class="aui-iconfont aui-icon-right"></span>
+		        </a>
+			</div>
+			<div class="pro-sel-center bt">
+				<p>
+					<strong>限购</strong>
+					<span>此优惠限量10件,超出恢复非活动价</span>
+				</p>
+				<p>
+					<strong>积分</strong>
+					<span>购买一件可得20积分</span>
+				</p>
+			</div>
+			<div class="pro-sel-bottom bt">
+				<p>
+					<strong>促销</strong>
+					<span>以下促销，可在购物车任选其一</span>
+				</p>
+				<div class="pro-sel-give">
+					<div>
+						<strong><a href="#">赠品</a></strong>
+						<span>指定商品满188元,可获以下赠品1份</span>
+						<a class="aui-pull-right aui-btn">
+				            <span class="aui-iconfont aui-icon-right"></span>
+				        </a>
+					</div>
+			        <img src="image/pro-sel-give01.jpg">
+			        <img src="image/pro-sel-give02.jpg">
+				</div>	
+			</div>
+		</div>
+		<div class="pro-comment">
+			<div class="pro-sel-top bd">
+				<h4>商品评价(85)</h4>
+				<a class="aui-pull-right aui-btn fr">
+		            <span class="aui-iconfont aui-icon-right"></span>
+		        </a>
+				<i class="fr">好评<em> 95%</em></i>
+			</div>
+			<div class="pro-comment-say">
+				<div class="item bd">
+					<p>
+						<span>
+							<i class="star"></i>
+							<i class="star"></i>
+							<i class="star"></i>
+							<i class="star"></i>
+							<i class=""></i>
+						</span>
+						<em>134***5</em>
+					</p>
+					<p>橙子很好很甜，明显刚刚摘下来不久，新鲜！</span></p>
+				</div>
+				<div class="item bd">
+					<p>
+						<span>
+							<i class="star"></i>
+							<i class="star"></i>
+							<i class="star"></i>
+							<i class="star"></i>
+							<i class="star"></i>
+						</span>
+						<em>138***8</em>
+					</p>
+					<p>橙子很新鲜，物流很快！</span></p>
+				</div>
+			</div>
+		</div>
+		<div class="pro-comment-more">
+			<a>查看更多评论</a>
+		</div>
+	</section>
+    <!--底部工具栏-->
+    <footer class="aui-bar aui-bar-tab bt" id="footer">
+        <div class="aui-bar-tab-item aui-active" tapmode>
+            <i class="aui-iconfont aui-icon-star"></i>
+            <div class="aui-bar-tab-label"><a href="#">收藏</a></div>
+        </div>
+        <div class="aui-bar-tab-item" tapmode>
+            <i class="aui-iconfont aui-icon-comment"></i>
+            <div class="aui-bar-tab-label"><a href="#">咨询</a></div>
+        </div>
+        <div class="aui-bar-tab-item" tapmode>
+            <i class="aui-iconfont aui-icon-cart"></i>
+            <div class="aui-badge" id="proNum">0</div>
+            <div class="aui-bar-tab-label"><a href="cart.html">购物车</a></div>
+        </div>
+        <div class="aui-bar-tab-item cart" tapmode>
+            加入购物车
+        </div>
+    </footer>
+	<!-- 购物模态框 -->
+	<section class="pro-car" style="display: none,z-index:-1">
+		<div class="pro-car-main">
+			<div class="pro-car-pic">
+				<img src="image/index-miaosha01.jpg">
+				<div class="pro-car-right">
+					<h4>湘橙<em>16</em>粒装</h4>
+					<span class="aui-iconfont aui-icon-close"></span>
+					<p>¥<em>88</em></p>
+				</div>
+			</div>
+			<div class="pro-car-desc">
+				<h4>规格</h4>
+				<p>
+					<span data-proId="orange-1"><em>8</em>粒装</span>
+					<span data-proId="orange-2" class="red"><em>16</em>粒装</span>
+				</p>
+				<strong>购买数量：<em>1</em></strong>
+				<ul>
+					<li>－</li>
+					<li><input type="text" value="1"></li>
+					<li>＋</li>
+				</ul>
+			</div>
+		</div>
+		<div class="pro-car-yes">加入购物车</div>
+	</section>
+</div>  
+<script type="text/javascript" src="script/api.js" ></script>
+<script type="text/javascript" src="script/aui-slide.js"></script>
+<script type="text/javascript" src="script/aui-tab.js" ></script>
+<script type="text/javascript" src="script/jquery-1.11.1.js"></script>
+<script type="text/javascript" src="script/proDetail.js"></script>
+<script type="text/javascript">
+	//加载完毕事件
+	window.onload=function(){
+		//窗口加载就调用本地存储,立即刷新购物车产品的数量---------------------
+		getCarNumFn();
+
+		//顶部右侧小按钮点击显示盒子
+		$(".header .aui-icon-more").click(function(){
+			if($(".header-box").css("display")=="none"){
+				$(".header-box").fadeIn();
+			}else if($(".header-box").css("display")=="block"){
+				$(".header-box").fadeOut();
+			}
+		})
+
+		//轮播图----------------------------------------------------------
+		apiready = function(){
+	        api.parseTapmode();
+	    }
+
+		//轮播图设置-----------------------------------------------------
+	    var slide3 = new auiSlide({
+	        container:document.getElementById("aui-slide3"),
+	        // "width":300,
+	        "height":170,
+	        "speed":500,
+	        "autoPlay": 3000, //自动播放
+	        "loop":true,
+	        "pageShow":true,
+	        "pageStyle":'dot',
+	        'dotPosition':'center'
+	    })
+
+	    //轮播图放大调用-------------------------------------------------
+		$("#imgTest").bind("click", function () {
+			$(this).ImgZoomIn();
+		});
+
+		//模态框调用-----------------------------------------------------
+		$("#footer .cart").on("click",function(){
+			$(this).modelFn();
+			//初始化input的值
+			$(".pro-car-desc input").val(1);
+		});
+
+		//模态框中-----点击关闭按钮,隐藏模态框
+		$(".pro-car-right span").click(function(){
+			$('.pro-car').css({
+	        	'display':'none',
+	        	'z-index':-1
+	        });
+	        //解除事件绑定,(因为弹出模态框的时候,绑定了一个禁止屏幕滑动事件,这里关闭模态框需要解绑事件)
+	        $(document).unbind("touchmove");
+		})
+
+		//目标1:点击加入购物车按钮,隐藏模态框
+		//目标2:把产品信息存储如本地数据
+		//目标3:获取数据,实现购物车数据的刷新
+		//
+		//先获取现在购物车内的产品数量
+		// var proNum=parseInt($("#proNum").text());//+++++不知道这一行数据与没有用----+++++++++++
+
+		$(".pro-car-yes").click(function(){
+			//隐藏模态框
+			$('.pro-car').css({
+	        	'display':'none',
+	        	'z-index':-1
+	        });
+	        //解除事件绑定,(因为弹出模态框的时候,绑定了一个禁止屏幕滑动事件,这里关闭模态框需要解绑事件)
+	        $(document).unbind("touchmove");
+
+			//将购物车产品和数量信息保存入本地存储--------------------
+			//获取参数
+			var id=$(".pro-car-desc .red").attr("data-proId");
+			var name=$(".pro-car-right h4").text();
+			var price=parseInt($(".pro-car-right p em").text());
+			var pic=$(".pro-car-pic img").attr("src");
+			var num=parseInt($(".pro-car-desc input").val());
+			// console.log("id="+id+",name="+name+",price="+price+",pic="+pic+",num="+num);
+			
+			addShoppingCart(id,name,price,pic,num);	//调用函数,将数据本地存储
+
+			//调用本地存储,立即刷新购物车产品的数量---------------------
+			getCarNumFn();
+		})
+
+		//调用模态框中---点击选择产品规格--------------------------------------------------------
+		$(".pro-car-desc p span").on("click",function(){
+			$(this).specificationFn();
+		})
+
+		//调用模态框------修改购买数量--------------------------------------------------------
+		countFn();
+	}
+</script>
+</body>
+</html>

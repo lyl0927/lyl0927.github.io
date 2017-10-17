@@ -1,0 +1,197 @@
+
+	/*要求登录框*/
+	.login{
+		width: 100%;
+		height: 3rem;
+		line-height: 3rem;
+		background-color: #f9f9f9;
+		padding: 0 0.5rem;
+	}
+	.login p{
+		font-size: 0.6rem;
+		display: inline-block;
+	}
+	.login a{
+		display: block;
+		color: gray;
+		float: right;
+		border: 1px solid #ddd;
+		height:1.4rem;
+		line-height: 1.4rem;
+		padding:0 0.5rem;
+		margin-top:0.8rem;
+		background-color: #fff;
+		border-radius: 0.1rem;
+	}
+
+	/*商品列表*/
+
+	/*加入购物车  模态框*/
+	.pro-car{
+		background-color:green;
+		overflow: hidden;
+		background-color: rgba(0, 0, 0, 0.8);
+	}
+	.pro-car-main{
+		width: 100%;
+		background-color: #fff;
+		overflow: hidden;
+		border-top: 1px solid #d5d5d5;
+
+	}
+	.pro-car-pic{
+		/*width: 100%;*/
+		height: 5rem;
+		padding:0.5rem;
+		margin-left: 2.5rem;
+		position:relative;
+		border-bottom: 1px solid #d5d5d5;
+	}
+	.pro-car-pic img{
+		height: 4rem;
+		display: inline-block;
+		overflow: hidden;
+		float: left;
+		/*border: 1px solid #d5d5d5;*/
+	}
+	.pro-car-right h4{
+		position:absolute;
+		top:0.5rem;
+		left:5rem;
+	}
+	.pro-car-right span{
+		position:absolute;
+		top:0.5rem;
+		right:0.5rem;
+	}
+	.pro-car-right p{
+		position:absolute;
+		bottom:0.5rem;
+		left:5rem;
+		color: rgb(201, 21, 35);
+		font-size: 0.7rem;
+	}
+	.pro-car-right p em{
+		color: rgb(201, 21, 35);
+		font-size: 0.85rem;
+		font-weight: 700;
+	}
+	.pro-car-right .aui-iconfont:before {
+     font-size: .7rem!important; 
+	    color: gray;
+	}
+	.pro-car-right ul{
+		float:right;
+		margin-top:2.5rem;
+	}
+	.pro-car-right ul li{
+		float:left;
+		width: 1.40rem;
+		height: 1.40rem;
+		line-height: 1.40rem;
+		text-align: center;
+		font-weight: 200px
+		font-size: 1.5rem;
+		border: 1px solid #d5d5d5;
+		margin-left: -1px;
+	}
+	.pro-dot{
+		width: 1rem;
+		height: 1rem;
+		line-height: 1rem;
+		font-size: 0.8rem;
+		border: 1px solid #666;
+		border-radius: 50%;
+		position: absolute;
+		top: 2rem;
+		left: -1.6rem;
+		background-color: #fff;
+		color: #fff;
+		text-align:center;
+	}
+	.selected .pro-dot{
+		background-color: rgb(201, 21, 35);
+		border: 1px solid rgb(201, 21, 35);
+	}
+	
+	
+
+	/*底部结算栏目*/
+	.cart-my{
+		width:100%;
+		height: 2.5rem;
+		overflow: hidden;
+		position:fixed;
+		bottom: 0;
+		color: #fff;
+		line-height: 45px;
+		text-align: center;
+		font-size:0.7rem;
+		border-top: 1px solid #d5d5d5;
+	}
+	.cart-my-left{
+		width: 4rem;
+		height: 100%;
+		display: inline-block;
+		float: left;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	.cart-my-left .pro-dot{
+		border: 1px solid #666;
+		border-radius: 50%;
+		top: 0.75rem;
+		left: 0.9rem;
+		color: #fff;
+		z-index:5;
+	}
+	.cart-my-left .pro-dot.all{
+		background-color: rgb(201, 21, 35);
+		border: 1px solid rgb(201, 21, 35);
+	}
+	.cart-my-left em{
+		color: #333;
+		padding-left:2rem;
+		line-height: 2.5rem;
+	}
+	.cart-my-center{
+		width: auto;
+		height: 100%;
+		text-align: right;
+		padding-right: 5.5rem;
+		padding-top:0.16rem;
+	}
+	.cart-my-center p{
+		height: 1.1rem;
+		line-height: 1.1rem;
+		font-size: 0.65rem;
+	}
+	.cart-my-center p:first-child{
+		position:relative;
+		padding-right:2.2rem;
+	}
+	.cart-my-center p span{
+		color: rgb(201, 21, 35);
+	}
+	.cart-my-center p em{
+		font-size: 0.9rem;
+		color: rgb(201, 21, 35);
+		position:absolute;
+		top: 0;
+		right:0;
+	}
+	.car-my-right{
+		position: absolute;
+		top: 0;
+		padding-top:0.9rem;
+		right: 0;
+		width: 4.5rem;
+		height: 100%;
+		line-height: 100%;
+		background-color: rgb(201, 21, 35);
+		color: #fff;
+		display: inline-block;
+		float: right;
+	}

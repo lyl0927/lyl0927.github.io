@@ -1,0 +1,63 @@
+/*通用样式*/
+*,::before,::after{
+	font-size: 14px;
+	margin: 0;
+	padding: 0;
+	/*清除点击高亮效果,*/
+	-webkit-tap-highlight-color: transparent
+	/*盒子模型*/
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	/*统一设置字体*/
+	/*font-family: '微软雅黑',sans-serif;*/
+}
+/*input标签去掉默认样式*/
+input{
+	border: 0;
+	-webkit-appearance:none;
+}
+/*a标签下划线*/
+a{
+	text-decoration: none;
+}
+/*去掉小圆点*/
+ol,ul{
+	list-style: none;
+}
+/*清除浮动*/
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.clearfix::before,.clearfix::after{
+	content:"";
+	display: block;
+	line-height: 0;
+	height:0;
+	visibility: hidden;
+	clear: both;
+}
+/*边框的通用样式*/
+.bl{
+	border-left: 1px solid #f5f5f5;
+}
+.br{
+	border-right: 1px solid #f5f5f5;
+}
+.bt{
+	border-top: 1px solid #f5f5f5;
+}
+.bd{
+	border-bottom: 1px solid #f5f5f5;
+}
+/*这一句是用来解决在安卓上的点击出现篮框问题*/
+body{
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+img{
+	padding:0;
+	margin:0;
+	vertical-align: bottom;
+}

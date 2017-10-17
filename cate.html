@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>商品分类</title>
+    <link rel="stylesheet" type="text/css" href="css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="css/cate.css" />
+</head>
+<body>
+<div class="cate clearfix">
+	<!--顶部导航栏-->
+	<header class="aui-bar aui-bar-nav index_header aui-border-b clearfix">
+        <a class="aui-pull-left aui-btn" href="index.html">
+            <span class="aui-iconfont aui-icon-left"></span>
+        </a>
+        <div class="aui-title" style="left:2rem; right: 2rem;">
+            <div class="aui-searchbar" id="search">
+                <div class="aui-searchbar-input aui-border-radius index-input">
+                    <i class="aui-iconfont aui-icon-search"></i>
+                    <input type="search" placeholder="请输入关键字" id="search-input" onclick="location.href='cate-search.html'">
+                    <div class="aui-searchbar-clear-btn">
+                        <i class="aui-iconfont aui-icon-close"></i>
+                    </div>
+                </div>
+                <div class="aui-searchbar-btn" tapmode>取消</div>
+            </div>
+        </div>
+        <a class="aui-pull-right aui-btn header-click">
+            <span class="aui-iconfont aui-icon-menu"></span>
+        </a>
+    </header>
+    <!--底部工具栏:平时是隐藏状态,点击会显示-->
+    <footer class="aui-bar aui-bar-tab aui-border-b clearfix" id="footer">
+        <div class="aui-bar-tab-item" tapmode>
+            <i class="aui-iconfont aui-icon-home"></i>
+            <div class="aui-bar-tab-label"><a href="index.html">首页</a></div>
+        </div>
+        <div class="aui-bar-tab-item  aui-active" tapmode>
+            <i class="aui-iconfont aui-icon-menu"></i>
+            <div class="aui-bar-tab-label">商品分类</div>
+        </div>
+        <div class="aui-bar-tab-item" tapmode>
+            <div class="aui-badge" id="proNum">0</div>
+            <i class="aui-iconfont aui-icon-cart"></i>
+            <div class="aui-bar-tab-label"><a href="cart.html">购物车</a></div>
+        </div>
+        <div class="aui-bar-tab-item" tapmode>
+            <div class="aui-dot"></div>
+            <i class="aui-iconfont aui-icon-my"></i>
+            <div class="aui-bar-tab-label"><a href="my.html">我的</a></div>
+        </div>
+    </footer>
+	<!-- 主要内容区域 -->
+	<div class="main">
+		<!--  左边的区域 -->
+		<div class="main_left fl">
+			<ul>
+				<li class='current'><a href="#">家用电器</a></li>
+				<li><a href="#">鞋靴箱包</a></li>
+				<li><a href="#">厨卫洁具</a></li>
+				<li><a href="#">母婴玩具</a></li>
+				<li><a href="#">手机数码</a></li>
+				<li><a href="#">进口好货</a></li>
+				<li><a href="#">家纺家具</a></li>
+				<li><a href="#">潮流女装</a></li>
+				<li><a href="#">帅气男装</a></li>
+				<li><a href="#">美妆护肤</a></li>
+				<li><a href="#">工具图书</a></li>
+				<li><a href="#">保健食品</a></li>
+				<li><a href="#">生鲜超市</a></li>
+				<li><a href="#">个人电脑</a></li>
+				<li><a href="#">生鲜冷饮</a></li>
+				<li><a href="#">高档礼品</a></li>
+			</ul>
+		</div>
+		<!--右边的区域 -->
+		<div class="main_right">
+			<div class="sort active">
+				<a href="#" class='right_banner'>
+					<img class="lazy" data-original="image/cate-ad01.jpg" alt="">
+				</a>
+				<h3>家用小电器<a class="aui-iconfont aui-icon-right" href="#"></a></h3>
+				<!-- 列表内容 -->
+				<ul>
+					<li><a href="proDetail.html">
+						<img class="lazy" src="image/cate-TV01.png"><p>微波炉</p>
+					</a></li>
+					<li><a href="proDetail.html">
+						<img class="lazy" src="image/cate-TV02.png"><p>电磁炉</p>
+					</a></li>
+					<li><a href="proDetail.html">
+						<img class="lazy" src="image/cate-TV03.png"><p>电饭煲</p>
+					</a></li>
+					<li><a href="proDetail.html">
+						<img class="lazy" src="image/cate-TV04.png"><p>电烤箱</p>
+					</a></li>
+					<li><a href="proDetail.html">
+						<img class="lazy" src="image/cate-TV05.png"><p>电压力锅</p>
+					</a></li>
+					<li><a href="proDetail.html">
+						<img class="lazy" src="image/cate-TV06.png"><p>多用途锅</p>
+					</a></li>
+					<li><a href="proDetail.html">
+						<img class="lazy" src="image/cate-TV07.png"><p>电炖锅</p>
+					</a></li>
+					<li><a href="proDetail.html">
+						<img class="lazy" src="image/cate-TV08.png"><p>电水壶</p>
+					</a></li>
+					<li><a href="proDetail.html">
+						<img class="lazy" src="image/cate-TV09.png"><p>榨汁机</p>
+					</a></li>
+					<li><a href="proDetail.html">
+						<img class="lazy" src="image/cate-TV10.png"><p>咖啡机</p>
+					</a></li>
+					<li><a href="proDetail.html">
+						<img class="lazy" src="image/cate-TV11.png"><p>酸奶机</p>
+					</a></li>
+					<li><a href="proDetail.html">
+						<img class="lazy" src="image/cate-TV12.png"><p>面包机</p>
+					</a></li>
+					<li><a href="proDetail.html">
+						<img class="lazy" src="image/cate-TV13.png"><p>豆浆机</p>
+					</a></li>
+					<li><a href="proDetail.html">
+						<img class="lazy" src="image/cate-TV14.png"><p>不锈锅</p>
+					</a></li>
+					<li><a href="proDetail.html">
+						<img class="lazy" src="image/cate-TV15.png"><p>煮蛋器</p>
+					</a></li>
+					<li><a href="proDetail.html">
+						<img class="lazy" src="image/cate-TV16.png"><p>其它电器</p>
+					</a></li>
+				</ul>
+			</div>
+		</div>	
+	</div>
+</div>  
+<script type="text/javascript" src="script/api.js" ></script>
+<script type="text/javascript" src="script/aui-tab.js" ></script>
+<script type="text/javascript" src="script/jquery-1.11.1.js"></script>
+<script type="text/javascript" src="script/jquery.lazyload.js"></script>
+<!--自己封装的移动端touch框架-->
+<script type="text/javascript" src="script/cate-touch.js"></script>
+<!-- 调用购物车数据的js -->
+<script type="text/javascript" src="script/proDetail.js"></script>
+<script type="text/javascript">	
+	//加载完毕事件
+	window.onload=function(){
+		//窗口加载就调用本地存储,立即刷新购物车产品的数量---------------------
+		getCarNumFn();
+		
+		//-----图片懒加载
+		$("img.lazy").lazyload();
+		
+		//底部工具栏的显示和隐藏-------------------------------------------------
+		footerShow();
+
+		//求出滑动主体部分内容的高度----------------------------------------------
+		var mainHeight=$(window).height()-$(".index_header").outerHeight();
+		$('.main').css('height',mainHeight);
+		
+		//左边的滑动效果-----------------------------------------------------------
+		var headerDom=$(".index_header");
+		var left_Ul=$(".main_left ul");
+		var parentDom=$(".main");
+		//调用函数,可以上下滑动
+		left_upToDownScroll(headerDom,left_Ul,parentDom);
+
+		//右边边的滑动效果-----------------------------------------------------------
+		var right_Ul=$(".main_right");
+		//调用函数,可以上下滑动
+		right_upToDownScroll(headerDom,right_Ul,parentDom);
+	}
+	
+	//这个函数是控制工具栏的显示和隐藏的
+	function footerShow(){
+		//点击右上角图标
+		$('.header-click').on('click',function(){
+			//console.log($(this));
+			if($('#footer').css('display')=='none'){
+				//如果顶部工具栏是隐藏的,那么显示该工具栏,并且移出搜索栏的底边框
+				$('#footer').css('display','block');
+				$('.index_header').removeClass('aui-border-b');
+			}else if($('#footer').css('display')=='block'){
+				$('#footer').css('display','none');
+				$('.index_header').addClass('aui-border-b');
+			}
+		});
+	}
+	
+
+	
+</script>
+</body>
+</html>

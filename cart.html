@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>商品详情</title>
+    <link rel="stylesheet" type="text/css" href="css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="css/cart.css" />
+    <style>
+    	body{
+    		padding-top:2.25rem;
+    		padding-bottom:2.5rem;
+    		/*background-color: #e5e5e5;*/
+    		background-color: #fff;
+    	}
+    	/*顶部导航栏*/
+
+		.aui-bar-light,
+		.aui-bar-nav.aui-bar-light .aui-iconfont
+		{
+			color:gray!important;
+		}
+		.aui-iconfont:before {
+		    font-size: .9rem!important;
+		}
+		.aui-bar.aui-bar-light{
+			background-color: #fff;
+			position: fixed;
+			z-index:10000;
+			background-image: none;
+			border-bottom:1px solid #ddd;
+		}
+    	.aui-bar-nav .aui-title {
+    		font-size: .8rem!important;
+		}
+		#index-header span{
+			color: gray;
+			margin-right:0.4rem;
+		}
+		/*底部工具栏*/
+		/*底部工具栏:平时是隐藏状态,点击会显示*/
+		#footer{
+			height:2.5rem;
+			overflow: hidden;
+		}
+		#footer.aui-bar-tab{
+			position:relative;
+			background-color: #fff;
+			display: none;
+			margin-top:-1px;
+			z-index: 10001
+		}
+		.aui-bar-tab .aui-bar-tab-label a{
+			display: block;
+		    font-size: 0.6rem;
+		    position: relative;
+		    color:#757575;
+		}	
+		.aui-bar-tab {
+		    background-color: #f9f9f9;
+		}
+		.aui-bar-tab .aui-active a{
+		    color: #039be5;
+		}
+    </style>
+</head>
+<body>
+<div class="cart">
+	<!--顶部导航栏-->
+    <header class="aui-bar aui-bar-nav aui-bar-light" id="index-header">
+        <a class="aui-pull-left aui-btn" href="index.html">
+            <span class="aui-iconfont aui-icon-left"></span>
+        </a>
+        <div class="aui-title">购物车</div>
+        <a class="aui-pull-right aui-btn">
+        	<!-- <span>编辑</span> -->
+            <span class="aui-iconfont aui-icon-menu header-click"></span>
+        </a>
+    </header>
+    <!--底部工具栏:平时是隐藏状态,点击会显示-->
+    <footer class="aui-bar aui-bar-tab aui-border-b clearfix" id="footer">
+        <div class="aui-bar-tab-item" tapmode>
+            <i class="aui-iconfont aui-icon-home"></i>
+            <div class="aui-bar-tab-label"><a href="index.html">首页</a></div>
+        </div>
+        <div class="aui-bar-tab-item" tapmode>
+            <i class="aui-iconfont aui-icon-menu"></i>
+            <div class="aui-bar-tab-label"><a href="cate.html">商品分类</a></div>
+        </div>
+        <div class="aui-bar-tab-item aui-active" tapmode>
+            <i class="aui-iconfont aui-icon-cart"></i>
+            <div class="aui-badge" id="proNum">0</div>
+            <div class="aui-bar-tab-label"><a href="javascript:;">购物车</a></div>
+        </div>
+        <div class="aui-bar-tab-item cart" tapmode>
+        	<div class="aui-dot"></div>
+            <i class="aui-iconfont aui-icon-my"></i>
+            <div class="aui-bar-tab-label"><a href="#">我的</a></div>
+        </div>
+    </footer>
+	<!-- 要求登陆框 -->
+	<div class="login">
+		<p>登录后电脑与手机同步</p>	
+		<a href="#">立即登陆</a>	
+	</div>
+	<!-- 商品列表 -->
+	<section class="pro-car">
+		<div class="pro-car-main">
+			<!-- 自己的原模板 -->
+			<!-- <div class="pro-car-pic selected" data-proId="orange-1">
+				<a href="proDetail.html"><img src="image/index-miaosha01.jpg"></a>
+				<div class="pro-car-right">
+					<h4>湘橙<em>16</em>粒装</h4>
+					<span class="aui-iconfont aui-icon-close"></span>
+					<p>¥<em> 88</em></p>
+					<ul>
+						<li>－</li>
+						<li><em>1</em></li>
+						<li>＋</li>
+					</ul>
+				</div>
+				前面的小圆点
+				<div class="pro-dot">✔</div>
+			</div> -->
+
+		</div>
+	</section>
+	<div class="cart-my">
+		<div class="cart-my-left">
+			<span class="pro-dot all">✔</span>
+			<em>全选</em>
+		</div>
+		<div class="cart-my-center">
+			<p>总计：<span>¥</span><em>0</em></p>
+			<p>免邮</p>
+		</div>
+		<div class="car-my-right">
+			结算(<em>0</em>)
+		</div>
+	</div>
+</div>
+
+
+<script type="text/javascript" src="script/api.js" ></script>
+<script type="text/javascript" src="script/aui-tab.js" ></script>
+<script type="text/javascript" src="script/jquery-1.11.1.js"></script>
+<!-- 模板引擎 -->
+<script type="text/javascript" src="script/template-web.js"></script>
+<!-- 自己封装的购物车js -->
+<script type="text/javascript" src="script/proDetail.js"></script>
+
+<!-- 定义模板引擎 -->
+<script id="test" type="text/html">
+	<% for (var i = 0; i < good.length; i ++) { %>
+		<div class="pro-car-pic selected" data-proId="<%=good[i].id%>">
+			<a href="proDetail.html"><img src="<%=good[i].pic%>"></a>
+			<div class="pro-car-right">
+				<h4><%=good[i].name%></h4>
+				<span class="aui-iconfont aui-icon-close"></span>
+				<p>¥<em> <%=good[i].price%></em></p>
+				<ul>
+					<li>－</li>
+					<li><em><%=good[i].num%></em></li>
+					<li>＋</li>
+				</ul>
+			</div>
+			<div class="pro-dot">✔</div>
+		</div>
+	<% } %>
+</script>
+
+	<!-- data: <%=$data%>
+	<%=objs[i].num%> -->
+
+<script type="text/javascript">
+	//加载完毕事件
+	window.onload=function(){
+		//窗口加载就调用本地存储,立即刷新购物车产品的数量---------------------
+		getCarNumFn();
+
+		//底部工具栏的显示和隐藏-------------------------------------------------
+		footerShow();
+
+		//模板引擎自动调用+本地存储数据的删除和修改效果------------------------
+		getModelFn();
+
+		//获取当前打算购买的物品数量-----------------------------------------
+		shopMount();
+
+		//点击左侧红圈圈-------------------------------------------------------------
+		dotClickFn();
+
+	}
+
+
+	//这个函数是控制底部工具栏的显示和隐藏的---------------------------------------
+	function footerShow(){
+		//点击右上角图标
+		$('.header-click').on('click',function(){
+			//console.log($(this));
+			if($('#footer').css('display')=='none'){
+				//如果顶部工具栏是隐藏的,那么显示该工具栏,并且移出搜索栏的底边框
+				$('#footer').css('display','block');
+			}else if($('#footer').css('display')=='block'){
+				$('#footer').css('display','none');
+			}
+		});
+	}
+
+	//这是自动生成模板引擎的---------------------------------------------------------
+	function getModelFn(){
+		// 获取本地存储的文件
+		var goods = window.localStorage.getItem("goods");	//获取本地数据
+		goods = JSON.parse(goods);					//将获取的字符串数据转换为JSON对象
+		if(goods!=null&&goods!="undefined"){ //如果不为空，则判断购物车中是否包含了当前购买的商品
+			var objs = goods.good;						//获取产品对象数组
+
+			// var goods = window.localStorage.removeItem("goods");//删除本地数据的方法
+			// console.log(goods.good[0].num);			//获取第一件商品的属性方法
+
+			// window.localStorage.removeItem("goods")	//用于本地存储数据的清空
+
+			//调用模板引擎的方法 填充数据-------------------
+			var resultStr =template('test',goods);
+			// console.log(resultStr);
+
+			// 添加到界面上
+			$('.pro-car-main').append(resultStr);
+		}
+		//监听删除按钮点击事件-----------------------------------------------------
+		$('.pro-car-pic .aui-icon-close').on('click',function(){
+			//获取产品对象数组
+			var objs = goods.good;						
+
+			//获取当前点击项的唯一标识ID
+			var temp=$(this).parents('.pro-car-pic').attr('data-proid');
+
+			// console.log(temp);
+			//遍历数组,获取和当前唯一标识ID匹配的项
+			if(goods!=null&&goods!="undefined"){ //如果不为空，则判断购物车中是否包含了当前购买的商品
+				for (var i = 0; i < objs.length; i++) {
+					if(objs[i].id==temp){
+						// 删除和当前唯一标识ID匹配的项
+						objs.splice(i,1);
+						//将JSON对象转化成字符串
+						goods = JSON.stringify(goods);
+						//用localStorage保存转化好的的字符串
+						window.localStorage.setItem("goods",goods);
+					}			
+				}
+			}
+			//立即刷新页面
+			window.location.reload();
+		});
+
+		//点击右边"+"按钮,更新数据--------------------------------------------------------------
+		$('.pro-car-pic li:last-child').on('click',function(){
+			//获取产品对象数组
+			var objs = goods.good;						
+
+			//获取当前点击项的唯一标识ID
+			var temp=$(this).parents('.pro-car-pic').attr('data-proid');
+
+			console.log(objs.length);
+
+			// console.log(temp);
+			//遍历数组,获取和当前唯一标识ID匹配的项
+			if(goods!=null&&goods!="undefined"){ //如果不为空，则判断购物车中是否包含了当前购买的商品
+				//获取当前项的购买数量
+				var currentNum=parseInt($(this).prev().text());
+				currentNum++;//数量加上1
+
+				for (var i = 0; i < objs.length; i++) {
+					if(objs[i].id==temp){
+						// 修改和当前唯一标识ID匹配的项
+						objs[i].num=currentNum;
+						// console.log(goods);
+
+						//将JSON对象转化成字符串
+						goods = JSON.stringify(goods);
+						//用localStorage保存转化好的的字符串
+						window.localStorage.setItem("goods",goods);
+					}			
+				}
+			}
+			//立即刷新页面
+			window.location.reload();
+		});
+
+		//点击左边"-"按钮,更新数据-----------------------------------------------------
+		$('.pro-car-pic li:first-child').on('click',function(){
+			//获取产品对象数组
+			var objs = goods.good;						
+
+			//获取当前点击项的唯一标识ID
+			var temp=$(this).parents('.pro-car-pic').attr('data-proid');
+
+			console.log(objs.length);
+
+			// console.log(temp);
+			//遍历数组,获取和当前唯一标识ID匹配的项
+			if(goods!=null&&goods!="undefined"){ //如果不为空，则判断购物车中是否包含了当前购买的商品
+				//获取当前项的购买数量
+				var currentNum=parseInt($(this).next().text());
+				//购买数量不能小于1
+				if(currentNum>1){
+					currentNum--;//数量加上1
+				}else{
+					currentNum=1;//数量等于1
+				}
+				
+				for (var i = 0; i < objs.length; i++) {
+					if(objs[i].id==temp){
+						// 修改和当前唯一标识ID匹配的项
+						objs[i].num=currentNum;
+						// console.log(goods);
+
+						//将JSON对象转化成字符串
+						goods = JSON.stringify(goods);
+						//用localStorage保存转化好的的字符串
+						window.localStorage.setItem("goods",goods);
+					}			
+				}
+			}
+			//立即刷新页面
+			window.location.reload();
+		});
+	};
+
+	//右下角的结算数量--------和总价钱-------------------------------------------
+	function shopMount(){
+		//获取当前打算购买物品对象(包含.select类名的对象就是我们打算购买的目标对象)
+		var curObj=$('.selected');
+		// console.log(currentObj.length);
+		//初始化产品的购买总数量
+		var proNum=0;	
+		//本次购买总价钱
+		var totalPrice=0;
+
+		for (var i = 0; i < curObj.length; i++) {
+			//获取当前项的数量
+			var mount=parseInt(curObj.eq(i).find('ul em').text());
+
+			//把数量统计入我们的总数量中
+			proNum += mount;
+
+			//获取当前项的价格
+			var price=parseInt(curObj.eq(i).find('.pro-car-right p em').text());
+			totalPrice +=price*mount;
+		}
+		//刷新我们的购买数量
+		$('.cart-my .car-my-right em').text(proNum);
+
+		//下面是统计本次购买产品的总价钱
+		$('.cart-my .cart-my-center em').text(totalPrice);
+	};
+
+	//左侧红圈圈按钮的相互影响
+	function dotClickFn(){
+		//点击左侧红圈圈
+		$('.pro-car-pic .pro-dot').on('click',function(){
+			//判断父元素有没有.select类名
+			if($(this).parents('.pro-car-pic').hasClass('selected')){
+				$(this).parents('.pro-car-pic').removeClass('selected');
+			}else{
+				$(this).parents('.pro-car-pic').addClass('selected');
+			}
+			//调用函数,右下角的结算数量--------和总价钱
+			shopMount();
+
+			//调用函数,满足条件情况下点亮下面小圆点
+			dotStatus()
+		});
+		//点击左下角红圈圈,控制上面的红圈圈
+		$('.cart-my .pro-dot').on('click',function(){
+			// alert($(this).hasClass('all'));
+			if($(this).hasClass('all')){
+				//检测上面的商品列表有没有.select类名
+				$('.pro-car-pic').removeClass('selected');
+				$(this).removeClass('all')
+			}else{
+				$('.pro-car-pic').addClass('selected');
+				$(this).addClass('all');
+			}
+			//调用函数,右下角的结算数量--------和总价钱
+			shopMount();
+		});
+
+
+		//创建函数,检测上面的小圆点是否全部处于亮起或西梅状态
+		function dotStatus(){
+			//初始化状态
+			var flag=true;
+
+			var dotObj=$('.pro-car-pic');
+			// console.log(dotObj);
+
+			for (var i = 0; i < dotObj.length; i++) {
+				if(!dotObj.eq(i).hasClass('selected')){
+					//只要上面的商品栏目有一个没有处于点亮状态,就会返回false;
+					flag=false;
+					continue;
+				}
+			}
+			console.log(flag);
+			//当上面所有小圆点处于选中状态时,点亮左下角小圆点
+			if(flag){
+				if(!$('.cart-my .pro-dot').hasClass('all')){
+					$('.cart-my .pro-dot').addClass('all');
+				}
+			}else{
+				if($('.cart-my .pro-dot').hasClass('all')){
+					$('.cart-my .pro-dot').removeClass('all');
+				}
+			}
+		}
+	}
+	
+		
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

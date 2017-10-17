@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>购物商城</title>
+    <link rel="stylesheet" type="text/css" href="css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="css/aui-slide.css" />
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+</head>
+<body>
+<div class="index">
+	<!--顶部导航栏-->
+	<header class="aui-bar aui-bar-nav index_header">
+        <a class="aui-pull-left aui-btn">
+            <span class="aui-iconfont aui-icon-location"> 深圳</span>
+        </a>
+        <div class="aui-title" style="left:2rem; right: 2rem;">
+            <div class="aui-searchbar" id="search">
+                <div class="aui-searchbar-input aui-border-radius index-input">
+                    <i class="aui-iconfont aui-icon-search"></i>
+                    <input type="search" placeholder="请输入关键字" id="search-input">
+                    <div class="aui-searchbar-clear-btn">
+                        <i class="aui-iconfont aui-icon-close"></i>
+                    </div>
+                </div>
+                <div class="aui-searchbar-btn" tapmode>取消</div>
+            </div>
+        </div>
+        <a class="aui-pull-right aui-btn">
+        	登陆
+            <!--<span class="aui-iconfont aui-icon-comment"></span>-->
+        </a>
+    </header>
+    <!--轮播图-->
+    <div id="aui-slide3">
+        <div class="aui-slide-wrap" >
+            <div class="aui-slide-node bg-dark">
+                <img src="./image/l1.png" />
+            </div>
+            <div class="aui-slide-node bg-dark">
+                <img src="./image/l2.png" />
+            </div>
+            <div class="aui-slide-node bg-dark">
+                <img src="./image/l3.png" />
+            </div>
+        </div>
+        <div class="aui-slide-page-wrap"><!--分页容器--></div>
+    </div>
+    <!--宫格布局-->
+    <section class="aui-grid aui-border-b index_nav">
+        <div class="aui-row">
+        	<div class="aui-col-xs-3">
+                <img src="image/gongge01.png" alt="" />
+                <div class="aui-grid-label">母婴</div>
+            </div>
+            <div class="aui-col-xs-3">
+            	<img src="image/gongge07.png" alt="" />
+                <div class="aui-grid-label">服装</div>
+            	
+            </div>
+            <div class="aui-col-xs-3">
+            	<img src="image/gongge05.png" alt="" />
+                <div class="aui-grid-label">直卖</div>
+            </div>
+            <div class="aui-col-xs-3">
+            	<img src="image/gongge08.png" alt="" />
+                <div class="aui-grid-label">生鲜</div>
+            </div>
+            <div class="aui-col-xs-3">
+                <img src="image/gongge02.png" alt="" />
+                <div class="aui-grid-label">进口</div>
+            </div>
+            <div class="aui-col-xs-3">
+                <img src="image/gongge06.png" alt="" />
+                <div class="aui-grid-label">签到</div>
+            </div>
+            <div class="aui-col-xs-3">
+                <img src="image/gongge03.png" alt="" />
+                <div class="aui-grid-label">淘宝</div>
+            </div>
+            <div class="aui-col-xs-3">
+                <img src="image/gongge04.png" alt="" />
+                <div class="aui-grid-label">充值</div>
+            </div>
+        </div>
+    </section>
+    <!--广告图片-->
+    <section class="index-ad aui-border-t">
+    	<img src="image/index-ad.jpg" alt="" />
+    </section>
+    <!--秒杀区域-->
+    <!-- 主要内容区 -->
+	<section class="index_main">
+		<!-- 第一个盒子内容需要特殊设置 -->
+		<div class="main_content">
+			<!-- 清除浮动 -->
+			<div class="content_top">
+				<span class="aui-iconfont aui-icon-date"></span>
+				<p>秒杀计时</p>
+				<ul>
+					<div><li>0</li><li>0</li></div>
+					<li>:</li>
+					<div><li>0</li><li>0</li></div>
+					<li>:</li>
+					<div><li>0</li><li>0</li></div>
+				</ul>
+				<a href="#" class="more">更多</a>
+			</div>
+			<div class="content_bottom">
+				<ul class="clearfix">
+					<li class="hot">
+						<a href="proDetail.html"><img class="lazy" data-original="image/index-miaosha03.jpg" alt=""></a>
+						<p>10元起</p>
+						<p>母婴用品</p>
+					</li>
+					<li>
+						<a href="proDetail.html"><img class="lazy" data-original="image/index-miaosha01.jpg" alt=""></a>
+						<p>满50减10</p>
+						<p>生鲜馆</p>
+					</li>
+					<li class="hot">
+						<a href="proDetail.html"><img class="lazy" data-original="image/index-miaosha02.jpg" alt=""></a>
+						<p>0元起</p>
+						<p>进口食品</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- 第一个后面的盒子 -->
+		<div class="main_content">
+			<div class="content_top clearfix">
+				<span class="fl">宝妈必逛</span>
+				<a href="#" class="more">更多</a>
+			</div>
+			<div class="content_bottom">
+				<ul class="clearfix">
+					<li class="fl br">
+						<a href="proDetail.html"><img class="lazy" data-original="image/shop-baby01.jpg" alt=""></a>
+					</li>
+					<li class="fr">
+						<a href="proDetail.html"><img class="lazy" data-original="image/shop-baby02.jpg" alt=""></a>
+					</li>
+					<li class="fr">
+						<a href="proDetail.html"><img class="lazy" data-original="image/shop-baby03.jpg" alt=""></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="main_content">
+			<div class="content_top clearfix">
+				<span class="fl">超值钜惠</span>
+				<a href="#" class="more">更多</a>
+			</div>
+			<div class="content_bottom">
+				<ul class="clearfix">
+					<li class="fr bl hot">
+						<a href="proDetail.html"><img class="lazy" data-original="image/shop-clothes01.jpg" alt=""></a>
+						<span>南翔 汤包 300g/袋 <b>:¥22</b></span>
+					</li>
+					<li class="fl">
+						<a href="proDetail.html"><img class="lazy" data-original="image/shop-clothes02.jpg" alt=""></a>
+						<span>南翔 汤包 300g/袋 <b>:¥22</b></span>
+					</li>
+					<li class="fl bt hot">
+						<a href="proDetail.html"><img class="lazy" data-original="image/shop-clothes03.jpg" alt=""></a>
+						<span>南翔 汤包 300g/袋 <b>:¥22</b></span>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="main_content">
+			<div class="content_top clearfix">
+				<span class="fl">速冻主食</span>
+				<a href="#" class="more">更多</a>
+			</div>
+			<div class="content_bottom">
+				<ul class="clearfix">
+					<li class="fl br">
+						<a href="proDetail.html"><img class="lazy" data-original="image/shop-food01.jpg" alt=""></a>
+						<span>南翔 汤包 300g/袋 <b>:¥22</b></span>
+					</li>
+					<li class="fl hot">
+						<a href="proDetail.html"><img class="lazy" data-original="image/shop-food02.jpg" alt=""></a>
+						<span>红虾L1-300克/盒 <b>:¥55</b></span>
+					</li>
+					<li class="fl bt br hot">
+						<a href="proDetail.html"><img class="lazy" data-original="image/shop-food03.jpg" alt=""></a>
+						<span>泡泡馄饨 440g/袋 <b>:¥16.5</b></span>
+					</li>
+					<li class="fl bt">
+						<a href="proDetail.html"><img class="lazy" data-original="image/shop-food04.jpg" alt=""></a>
+						<span>味全优酪乳100g*16杯 <b>:¥62</b></span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+    <!--商品列表-->
+    <section class="shop">
+    	<div class="shophead">
+			—— <span>超实惠</span> ——
+		</div>
+		<!--卡片列表-->
+        <div class="aui-card-list-content">
+            <ul class="index-pro">
+                <li class="bt">
+                    <div class="index-pro-left">
+                    	<a href="proDetail.html">
+                        	<img class="lazy" data-original="image/index-pro01.jpg" >
+                    	</a>
+                    </div>
+                    <div class="index-pro-right">
+						<p><a href="proDetail.html">帮宝适 超薄干爽系列电子商务渠道彩箱装大号164片 L164</a></p>
+						<div class="index-text">
+							<h3>¥225</h3>
+							<del>¥245</del>
+						</div>
+                    </div>
+                </li>
+                <li class="bt">
+                    <div class="index-pro-left">
+                    	<a href="proDetail.html">
+                        	<img class="lazy" data-original="image/index-pro02.jpg" >
+                    	</a>
+                    </div>
+                    <div class="index-pro-right">
+						<p><a href="proDetail.html">TakeCare培康益生菌童Q米粉2罐装（原味配方225g+铁锌钙配方225g）</a></p>
+						<div class="index-text">
+							<h3>¥55</h3>
+							<del>¥65</del>
+						</div>
+                    </div>
+                </li>
+                <li class="bt">
+                    <div class="index-pro-left">
+                    	<a href="proDetail.html">
+                        	<img class="lazy" data-original="image/index-pro03.jpg" >
+                    	</a>
+                    </div>
+                    <div class="index-pro-right">
+						<p><a href="proDetail.html">嘉宝3段婴儿米粉混合蔬菜营养米粉225g/罐</a></p>
+						<div class="index-text">
+							<h3>¥78</h3>
+							<del>¥83</del>
+						</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="search-more">
+        	<img class="lazy" data-original="image/more.gif" alt="" />
+        	<span>查看更多</span>
+        </div>
+    </section>
+    <!--底部没有更多了-->
+    <div class="index-main-over">
+		<div class="index-main-over-img">
+			<img class="lazy" data-original="image/index-main-over.png">
+			<p>亲，没有更多了哦~</p>
+			
+		</div>
+
+	</div>
+    <!--网页底部-->
+	<div class="outbox footer_box">
+		<p class="vpage"> 
+			<a href="//m.feiniu.com/" class="cur">触屏版</a> 
+			<a href="javascript:;" onclick="gopc();">电脑版</a> 
+			<a href="javascript:;" id="J_download_app">下载客户端</a> 
+		</p> 
+		<p class="copyright">Copyright © 2016-2019 商城网,ALL Rights Reserved.<br>湘ICP备14657776号 营业执照</p>
+	</div>
+    <!--底部工具栏-->
+    <footer class="aui-bar aui-bar-tab bt" id="footer">
+        <div class="aui-bar-tab-item aui-active" tapmode>
+            <i class="aui-iconfont aui-icon-home"></i>
+            <div class="aui-bar-tab-label">首页</div>
+        </div>
+        <div class="aui-bar-tab-item" tapmode>
+            <i class="aui-iconfont aui-icon-menu"></i>
+            <div class="aui-bar-tab-label"><a href="cate.html">商品分类</a></div>
+        </div>
+        <div class="aui-bar-tab-item" tapmode>
+            <div class="aui-badge" id="proNum">0</div>
+            <i class="aui-iconfont aui-icon-cart"></i>
+            <div class="aui-bar-tab-label"><a href="cart.html">购物车</a></div>
+        </div>
+        <div class="aui-bar-tab-item" tapmode>
+            <div class="aui-dot"></div>
+            <i class="aui-iconfont aui-icon-my"></i>
+            <div class="aui-bar-tab-label"><a href="my.html">我的</a></div>
+        </div>
+    </footer>
+    <!--底部小火箭,点击跳转到顶部-->
+    <div class="index_rocket">
+    	<span class="aui-iconfont aui-icon-top"></span>
+    </div>
+    
+</div>  
+<script type="text/javascript" src="script/api.js" ></script>
+<script type="text/javascript" src="script/aui-slide.js"></script>
+<script type="text/javascript" src="script/aui-tab.js" ></script>
+<script type="text/javascript" src="script/jquery-1.11.1.js"></script>
+<script type="text/javascript" src="script/jquery.lazyload.min.js"></script>
+<!-- 调用购物车数据的js -->
+<script type="text/javascript" src="script/proDetail.js"></script>
+<script type="text/javascript">
+	//加载完毕事件
+	window.onload=function(){
+		//窗口加载就调用本地存储,立即刷新购物车产品的数量---------------------
+		getCarNumFn();
+
+		//图片懒加载
+		$("img.lazy").lazyload();
+		//顶部导航栏滚动透明度效果
+		headerScroll();
+		//倒计时效果
+		cutDownTime(3);
+		
+		//轮播图
+	    var slide3 = new auiSlide({
+	        container:document.getElementById("aui-slide3"),
+	        // "width":300,
+	        "height":170,
+	        "speed":500,
+	        "autoPlay": 3000, //自动播放
+	        "loop":true,
+	        "pageShow":true,
+	        "pageStyle":'dot',
+	        'dotPosition':'center'
+	    })
+	    
+	    //宫格布局
+	    apiready = function(){
+	        api.parseTapmode();
+	    }
+	    var tab = document.querySelectorAll(".aui-tab-item");
+	    for(var i in tab){
+	        tab[i].onclick = function(e){
+	            document.querySelector(".aui-tab-item.aui-active").classList.remove("aui-active");
+	            e.target.classList.add("aui-active");
+	        }
+	    }
+	    //底部工具栏
+		
+		//底部小火箭
+		footerRocket(); 
+	}
+	
+	//顶部导航栏
+	function headerScroll(){
+		//1,获取一些参数
+		//距离顶部的高度
+		// console.log(document.querySelector(".index_nav").offsetTop);
+		//元素自身高度
+		// console.log(document.querySelector(".index_nav").offsetHeight);
+		//获取导航栏
+		var navDom=document.querySelector(".index_nav");
+		//获取导航栏底部到浏览器顶部距离
+		var maxDistance=navDom.offsetTop+navDom.offsetHeight;
+		//获取顶部通栏
+		var headerDom=document.querySelector('.index_header');
+	
+		//2,注册onscroll事件,事件监听
+		window.addEventListener('scroll',scrollFn1);
+		
+		function scrollFn1(){
+			// console.log(123);
+			//获取滚动距离
+			var scrollDistance=window.scrollY;
+			// 方法2 var scrollDistance=window.document.body.scrollTop;
+			// console.log('scrollY:'+scrollDistance);
+	
+			//计算百分数
+			var percent=scrollDistance/maxDistance;
+			// console.log(percent);
+			
+			//如果超过1,把persont还原为1;
+			if(percent>1){
+				percent=1;
+			} 
+	
+			//计算顶部通栏的透明度
+			headerDom.style.backgroundColor='rgba(201,21,35,'+percent+')';
+		}
+	
+	}
+	
+    //秒杀
+	//倒计时方法
+	function cutDownTime(time){
+		//定义总时间
+		// var totalHour=3;
+		//转化为秒
+		var totalSec=time*3600;
+		//多加一秒,让用户看到的是整数
+		totalSec++;
+		//获取想要修改的所有li标签
+		var liArr=document.querySelectorAll(".main_content:nth-child(1) .content_top li");
+		// console.log(liArr);
+		
+		//开启定时器
+		var timeId=setInterval(function(){
+			//判断是否到期
+			if(totalSec<=0){
+				//清除定时器
+				clearInterval(timeId);
+				// console.log("结束了,你买不到了");
+				return;
+			}
+	
+			//递减
+			totalSec--;
+			//当前的时间对应多少小时/分/秒
+			var hour=Math.floor(totalSec/3600);
+			var minute=Math.floor(totalSec%3600/60);
+			var sec=Math.floor(totalSec%60);
+	
+			//修改dom元素显示
+			//小时
+			liArr[0].innerHTML=Math.floor(hour/10);
+			liArr[1].innerHTML=hour%10;
+			//分
+			liArr[3].innerHTML=Math.floor(minute/10);
+			liArr[4].innerHTML=minute%10;
+			//秒
+			liArr[6].innerHTML=Math.floor(sec/10);
+			liArr[7].innerHTML=sec%10;
+	
+		},1000);
+	}
+    
+    //底部小火箭
+    function footerRocket(){
+    	//1.获取节点对象
+    	//获取导航栏节点对象
+    	var headerDom=document.querySelector('.index_header');
+		//获取宫格布局节点对象
+		var navDom=document.querySelector(".index_nav");
+		//获取小火箭节点对象
+		var rocketDom=document.querySelector('.index_rocket');
+		//宫格布局节点对象和导航栏顶部重合时,页面距离顶部的距离(被卷去最大距离的距离)
+		var maxDistance=navDom.offsetTop-headerDom.offsetHeight;
+		$(window).scroll(function() {
+			if($(window).scrollTop() >= maxDistance){ //向下滚动像素大于这个值时，即出现小火箭~
+				$('.index_rocket').css('display','block');
+				$('.index_rocket').fadeIn(300); //火箭淡入的时间，越小出现的越快~
+			}else{   
+				$('.index_rocket').fadeOut(300); //火箭淡出的时间，越小消失的越快~
+			}  
+		});
+		
+		//火箭动画停留时间，越小消失的越快~
+		$('.index_rocket').click(function(){
+			$('html,body').animate({
+				scrollTop: '0px'	
+			}, 800);
+		});
+    }
+</script>
+</body>
+</html>

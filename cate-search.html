@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>列表页_搜索</title>
+    <link rel="stylesheet" type="text/css" href="css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <style type="text/css">
+        body{
+            background-color: #fff;
+            margin-top:45px;
+        }
+        /*顶部导航栏*/
+        .index .aui-bar-nav {
+            background-color: rgba(201,21,35,0);
+            /*要把通栏固定在顶部*/
+            position: fixed;
+            z-index:10000;
+        }
+        .aui-searchbar {
+            background: none;
+        }
+        
+        .aui-bar-nav .aui-btn .aui-iconfont,
+        .aui-bar-nav .aui-btn   
+        {
+            font-size:16px!important;
+            color:#666;
+        }
+        .cate .aui-bar-nav {
+            background-color:#f9f9f9!important;
+        }
+        .cate .index_header{
+            position: fixed;
+        }
+        .cate span.aui-iconfont:before {
+            font-size:.9rem;
+            color: gray;
+        }
+        .index-input {
+            margin: 0 15px 0 0!important;
+            background-color: #eaeaea;
+        }
+        .index-input.aui-searchbar-input input{
+            color:#333;
+        }
+
+        /*主要页面*/
+        .cate-search-main{
+            margin:0 10px;
+        }
+        .cate-search-main h3{
+            height: 2.8rem;
+            line-height: 2.8rem;
+            font-size: 0.7rem;
+        }
+        .cate-search-main a{
+            display: inline-block;
+            font-size: 0.7rem;
+            padding: 0.1rem 0.5rem;
+            color:#333;
+            border: 1px solid #ddd;
+            margin: 0 0.4rem 0.4rem 0;
+            border-radius: 0.2rem;
+        }
+    </style>
+</head>
+<body>
+<div class="cate">
+	<!--顶部导航栏-->
+	<header class="aui-bar aui-bar-nav index_header aui-border-b">
+        <a class="aui-pull-left aui-btn" href="cate.html">
+            <span class="aui-iconfont aui-icon-left"></span>
+        </a>
+        <div class="aui-title" style="left:2rem; right: 2rem;">
+            <div class="aui-searchbar" id="search">
+                <div class="aui-searchbar-input aui-border-radius index-input">
+                    <i class="aui-iconfont aui-icon-search"></i>
+                    <input type="search" placeholder="请输入关键字" id="search-input">
+                    <div class="aui-searchbar-clear-btn">
+                        <i class="aui-iconfont aui-icon-close"></i>
+                    </div>
+                </div>
+                <div class="aui-searchbar-btn" tapmode>取消</div>
+            </div>
+        </div>
+        <a class="aui-pull-right aui-btn" onclick='location.href=("index.html")'>
+            <!--<span class="aui-iconfont aui-icon-menu"></span>-->
+            	搜索
+        </a>
+    </header>
+    <!--主要页面-->
+    <section class="cate-search-main">
+    	<h3>
+    		<span class="aui-iconfont aui-icon-laud"> 大家关注</span>
+    	</h3>
+    	<a href="#">柴米</a>
+    	<a href="#">油盐</a>	
+    	<a href="#">酱醋</a>
+    	<a href="#">武夷山茶</a>
+    	<a href="#">洗发水</a>
+    	<a href="#">牙膏牙刷</a>
+    	<a href="#">面膜</a>
+    	<a href="#">洗面奶</a>
+    	<a href="#">唇膏</a>
+    	<a href="#">画笔</a>
+    	<a href="#">衣服</a>
+    	<a href="#">井口食物</a>
+    	
+    </section>
+    
+    
+    
+    
+    
+    
+    
+    
+</div>  
+<script type="text/javascript" src="script/api.js" ></script>
+<!--<script type="text/javascript" src="script/aui-tab.js" ></script>-->
+<script type="text/javascript" src="script/jquery-1.11.1.js"></script>
+<script type="text/javascript" src="script/jquery.lazyload.min.js"></script>
+<script type="text/javascript">	
+	//加载完毕事件
+	window.onload=function(){
+		//图片懒加载
+		$("img.lazy").lazyload();
+
+		
+	}
+	
+
+</script>
+</body>
+</html>

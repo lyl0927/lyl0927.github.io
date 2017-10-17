@@ -1,0 +1,185 @@
+	html,body{
+		height:100%!important;
+	}
+	body{
+		overflow: hidden;
+		background-color: #fff;
+	}
+	/*顶部导航栏*/
+	.cate{
+		height:100%;
+		width:100%;
+		overflow: hidden;
+	}
+	.index .aui-bar-nav {
+		background-color: rgba(201,21,35,0);
+		/*要把通栏固定在顶部*/
+		position: fixed;
+		z-index:10000;
+	}
+	.aui-searchbar {
+		background: none;
+	}
+	
+	.index-input {
+	    margin: 0!important;
+	}
+	.aui-bar-nav .aui-btn .aui-iconfont,
+	.aui-bar-nav .aui-btn	
+	{
+		font-size:16px!important;
+		color:#333;
+	}
+	.cate .aui-bar-nav {
+	    background-color:#fff!important;
+	}
+	.cate .index_header{
+		position: relative;
+		top:0;
+		left:0;
+	}
+	.cate span.aui-iconfont:before {
+    	font-size:.9rem;
+    	color: gray;
+	}
+	.index-input {
+    	margin: 0!important;
+    	background-color: #eaeaea;
+	}
+	.index-input.aui-searchbar-input input{
+		color:#333;
+	}
+	/*底部工具栏*/
+	/*底部工具栏:平时是隐藏状态,点击会显示*/
+	.aui-bar-tab .aui-bar-tab-label a {
+	    display: block;
+	    font-size: 0.6rem;
+	    position: relative;
+	    color: #757575;
+	}
+	.cate .aui-bar-tab {
+	    position: relative!important;
+	    display:none;
+	}
+	
+	/* 主要内容区域 */
+	.main{
+		width: 100%;
+		/*height: 100%;*/
+		overflow:hidden;
+	}
+	/* 主要内容区域的 左边 */
+	.main .main_left{
+		width: 4.5rem;
+		height: 100%;
+		float:left;
+		z-index:2;
+	}
+	.main .main_left ul{
+		width: 100%;
+	}
+	.main .main_left ul li{
+		width: 100%;
+		text-align: center;
+		height: 2.5rem;
+		line-height: 2.5rem;
+		border-bottom: 1px solid #fff;
+		border-left: 5px solid #f5f5f5;
+		background-color: #f5f5f5;
+	}
+	.main .main_left ul li a{
+		color: black;
+		/* 为了 让 a标签的点击范围 正大 避免 出现用户 点击li标签的情况 */
+		width: 100%;
+		display: block;
+		height: 100%;
+	}
+	
+	.main .main_left ul li.current{
+		/*border-right: none;*/
+		background-color: #fff;
+		border-left: 5px solid rgb(201, 21, 35);
+	}
+	.main .main_left ul li.current a{
+		color: rgb(201, 21, 35);
+	}
+	
+	/* 右边的区域 */
+	.main .main_right{
+		overflow: hidden;
+		/* 顶部 左右 底部为0 */
+		padding: 10px 10px 0;
+		/*min-height:600px;*/
+	}
+	.main .main_right .sort{
+		display:none;
+		height: 100%;
+		overflow: hidden;
+	}
+	.main .main_right .sort.active{
+		display:block;
+	}
+	
+	/* a标签 不要设置 宽度 自适应 */
+	.main .main_right .right_banner{
+		display: block;
+		width: 100%;
+	}
+	.main .main_right .right_banner img{
+		display: block;
+		width: 100%;
+	}
+	
+	.main .main_right h3{
+		width:100%;
+		height:40px;
+		line-height:40px;
+		font-size: 14px;
+		color: #333;
+		padding: 0 0.5rem;
+	}
+	.cate .main a.aui-iconfont:before {
+		display: inline-block;
+	    font-size: .6rem;
+	    color: gray;
+	    float:right;
+	}
+	
+	/* 右边区域的 列表部分 */
+	.main .main_right ul{
+		width: 100%;
+		height:100%;
+		padding-top: 10px;
+	}
+	.main .main_right ul li{
+		width: 33.3333%;
+		float: left;
+		margin-bottom:1rem;
+	}
+	.main .main_right ul li a{
+		display: block;
+		width: 100%;
+	}
+	.main .main_right ul li a img{
+		display: block;
+		width: 80%;
+		margin: 0 auto;
+	}
+	.main .main_right ul li a p{
+		text-align: center;
+		color: #666;
+		padding: 4px 0;
+		font-size: 13px;
+	}
+
+	.more {
+	    color: gray;
+	    float: right;
+	    line-height: 32px;
+	    margin-right: 10px;
+	    font-size: 12px;
+	}
+	.more:after {
+	    color: rgb(201, 21, 35);
+	    content: '>';
+	}
